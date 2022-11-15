@@ -19,9 +19,10 @@ public class HealthController : MonoBehaviour
         damageTakeCount += 1;
         DecreaseHealth();
     }
+
     void DecreaseHealth()
     {
-        if (damageTakeCount < 3)
+        if (damageTakeCount <= 3)
         {
             var startPoint = healths.Count - 1;
             var endPoint = startPoint - 1;

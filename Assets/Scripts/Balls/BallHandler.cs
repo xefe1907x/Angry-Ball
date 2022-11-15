@@ -17,6 +17,7 @@ public class BallHandler : MonoBehaviour
         mainCamera = Camera.main;
         ballRigidBody = GetComponent<Rigidbody2D>();
         ballRigidBody.isKinematic = true;
+        ConnectRigidBody();
     }
 
     void Update()
@@ -46,11 +47,18 @@ public class BallHandler : MonoBehaviour
             ballRigidBody.position = worldPosition;
         }
     }
+    
+    void ConnectRigidBody()
+    {
+        var pivot = GameObject.FindGameObjectWithTag("Pivot");
+        var pivotRigidBody = pivot.GetComponent<Rigidbody2D>();
+        var sprintJoint = GetComponent<SpringJoint2D>().connectedBody = pivotRigidBody;
+    }
 
     void LaunchBall()
     {
         ballRigidBody.isKinematic = false;
-        Invoke("RemoveJoint", 0.15f);
+        Invoke("RemoveJoint", 0.3f);
         Invoke("RemoveHandler", 1.5f);
         
     }
@@ -63,8 +71,11 @@ public class BallHandler : MonoBehaviour
     
     void RemoveJoint()
     {
-        var joint = GetComponent<SpringJoint2D>();
-        Destroy(joint);
+        ballRigidBody = null;
+        var currentBallSprintJoint = GetComponent<SpringJoint2D>();
+        currentBallSprintJoint.enabled = false;
+        currentBallSprintJoint = null;
+        
         ballIsThrown?.Invoke();
     }
 }
