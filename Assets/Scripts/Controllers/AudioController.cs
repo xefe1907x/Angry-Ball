@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -9,11 +8,19 @@ public class AudioController : MonoBehaviour
     AudioSource _audioSource;
 
     [SerializeField] AudioClip buttonClick;
+    [SerializeField] AudioClip buyButtonClick;
 
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         ButtonSessions.buttonClicked += ButtonClickSound;
+        WalletController.boughtButton2 += BuyButtonSound;
+        WalletController.boughtButton3 += BuyButtonSound;
+    }
+
+    void BuyButtonSound()
+    {
+        _audioSource.PlayOneShot(buyButtonClick);
     }
 
     void ButtonClickSound()
@@ -29,5 +36,7 @@ public class AudioController : MonoBehaviour
     void OnDisable()
     {
         ButtonSessions.buttonClicked -= ButtonClickSound;
+        WalletController.boughtButton2 -= BuyButtonSound;
+        WalletController.boughtButton3 -= BuyButtonSound;
     }
 }
