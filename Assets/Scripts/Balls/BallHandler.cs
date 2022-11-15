@@ -16,6 +16,7 @@ public class BallHandler : MonoBehaviour
     {
         mainCamera = Camera.main;
         ballRigidBody = GetComponent<Rigidbody2D>();
+        ballRigidBody.isKinematic = true;
     }
 
     void Update()
@@ -36,19 +37,28 @@ public class BallHandler : MonoBehaviour
 
         isDragging = true;
 
-        ballRigidBody.isKinematic = true;
+        if (ballRigidBody)
+        {
+            Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
 
-        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
-
-        ballRigidBody.position = worldPosition;
+            ballRigidBody.position = worldPosition;
+        }
     }
 
     void LaunchBall()
     {
         ballRigidBody.isKinematic = false;
-        Invoke("RemoveJoint", 0.4f);
+        Invoke("RemoveJoint", 0.15f);
+        Invoke("RemoveHandler", 1.5f);
+        
+    }
+    
+    void RemoveHandler()
+    {
+        var handler = GetComponent<BallHandler>();
+        Destroy(handler);
     }
     
     void RemoveJoint()

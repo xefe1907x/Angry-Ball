@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
+    public static Action healthBecomeZero;
+    
     [SerializeField] List<GameObject> healths = new List<GameObject>();
 
     int damageTakeCount = 0;
@@ -17,17 +19,24 @@ public class HealthController : MonoBehaviour
         damageTakeCount += 1;
         DecreaseHealth();
     }
-
     void DecreaseHealth()
     {
-        var startPoint = healths.Count - 1;
-        var endPoint = startPoint - 1;
-
-        for (int i = startPoint; i > endPoint; i--)
+        if (damageTakeCount < 3)
         {
-            healths[i].SetActive(false);
-            healths.Remove(healths[i]);
+            var startPoint = healths.Count - 1;
+            var endPoint = startPoint - 1;
+
+            for (int i = startPoint; i > endPoint; i--)
+            {
+                healths[i].SetActive(false);
+                healths.Remove(healths[i]);
+            }
         }
+        else
+        {
+            healthBecomeZero?.Invoke();
+        }
+        
     }
 
     void OnDisable()

@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
     int ballType; // 0 = Football, 1 = Basketball, 2 = Volleyball
 
-    [SerializeField] GameObject footBall;
-    [SerializeField] GameObject basketBall;
-    [SerializeField] GameObject volleyBall;
+    string ballTag;
 
+    public static Action<string> ballTagSelected;
     void Start()
     {
         BallSelector();
@@ -16,16 +16,17 @@ public class BallController : MonoBehaviour
     void BallSelector()
     {
         ballType = PlayerPrefs.GetInt("gameBall");
-        
+
         if (ballType == 0)
-            footBall.SetActive(true);
+            ballTag = "Football";
         else if (ballType == 1)
-            basketBall.SetActive(true);
+            ballTag = "Basketball";
         else if (ballType == 2)
-            volleyBall.SetActive(true);
+            ballTag = "Volleyball";
+        
+        ballTagSelected?.Invoke(ballTag);
     }
-
-
+    
     public void ButtonAfterBuy1()
     {
         PlayerPrefs.SetInt("gameBall", 0);
