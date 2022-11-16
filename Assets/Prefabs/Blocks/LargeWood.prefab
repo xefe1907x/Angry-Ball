@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5571843012008648554}
   - component: {fileID: 5571843012008648555}
   m_Layer: 0
-  m_Name: LargeBlock
+  m_Name: LargeWood
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

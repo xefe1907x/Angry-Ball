@@ -24,8 +24,15 @@ public class ButtonSessions : MonoBehaviour
 
         if (level == 0)
             level = 1;
+        else if (level > 3)
+            level = 3;
 
         SceneManager.LoadScene(level);
+    }
+
+    void Update()
+    {
+        Debug.Log(PlayerPrefs.GetInt("gameLevel"));
     }
 
     #region BuyButtons
@@ -87,6 +94,10 @@ public class ButtonSessions : MonoBehaviour
     {
         var currentScene = SceneManager.GetActiveScene().buildIndex;
         var nextScene = currentScene + 1;
-        SceneManager.LoadScene(nextScene);
+        
+        if (currentScene == 3)
+            SceneManager.LoadScene(currentScene);
+        else
+            SceneManager.LoadScene(nextScene);
     }
 }
