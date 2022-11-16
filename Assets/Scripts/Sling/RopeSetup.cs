@@ -3,11 +3,17 @@ using UnityEngine.InputSystem;
 public class RopeSetup : MonoBehaviour
 {
     LineRenderer line;
+    
     [SerializeField] Transform positionStart;
     Transform positionEnd;
+    
     GameObject pivot;
+    
     bool isPressing;
+    
     Camera camera;
+
+    float maxDistance = 8f;
 
     void Start()
     {
@@ -29,11 +35,13 @@ public class RopeSetup : MonoBehaviour
     void Update()
     {
         SetPos2();
-        
     }
 
     void SetPos2()
     {
+        if (Touchscreen.current == null)
+            return;
+        
         if (Touchscreen.current.primaryTouch.press.isPressed)
             isPressing = true;
         else
@@ -45,7 +53,12 @@ public class RopeSetup : MonoBehaviour
         
             Vector3 worldPosition = camera.ScreenToWorldPoint(touchPosition);
 
-            line.SetPosition(1, worldPosition);
+            float distance = Vector2.Distance(pivot.transform.position, worldPosition);
+
+            if (distance < maxDistance)
+            {
+                line.SetPosition(1, worldPosition);
+            }
         }
 
         else

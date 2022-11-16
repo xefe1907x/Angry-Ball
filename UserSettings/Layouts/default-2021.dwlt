@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 96
+  controlID: 108
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 97
+  controlID: 109
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 98
+  controlID: 110
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -268,14 +268,14 @@ MonoBehaviour:
     y: 561
     width: 1467
     height: 386
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 16}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -335,21 +335,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f6dbfeff1addfeff56e2feff78e3feffc4e8ffff02ecffff62f1ffff08f2ffff7cf5fffffef5ffff7cf6ffff82f6ffff04fbffff3aae000030af000058af00009caf0000a0af00007add0000b6df000008e5000070e600007ae60000b2e80000
+      m_ExpandedIDs: ccaeffff72afffffe6b2ffff68b3ffffcab3ffffd6b3ffff1cbcffff80bdffffccbeffffdabfffff1ec1ffff68c2ffff0cdbffffeedeffffdce4ffff04fbffffdc72000002740000aa740000ca74000052a30000f8a3000018a40000ccaa0000ecaa000064ad00008eae000034af000054af00002ebe00006cc00000eac4000022c70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Rope1
-        m_OriginalName: Rope1
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -43266
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -739,10 +739,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 71}
-    m_SelectedIDs: b2770000
-    m_LastClickedID: 30642
-    m_ExpandedIDs: 00000000f2760000f4760000f6760000f8760000fa760000fc760000fe76000098790000527a0000e293000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 5e780000
+    m_LastClickedID: 30814
+    m_ExpandedIDs: 00000000f0770000f2770000f4770000f6770000f8770000fa770000fc7700003e7a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -770,7 +770,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f2760000f4760000f6760000f8760000fa760000fc760000fe760000
+    m_ExpandedIDs: 00000000f0770000f2770000f4770000f6770000f8770000fa770000fc770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

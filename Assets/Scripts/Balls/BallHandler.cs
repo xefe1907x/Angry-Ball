@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 public class BallHandler : MonoBehaviour
 {
     [SerializeField] Rigidbody2D ballRigidBody;
+    
+    GameObject pivot;
+
+    float maxDistance = 8f;
 
     Camera mainCamera;
     
@@ -16,6 +20,7 @@ public class BallHandler : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        pivot = GameObject.FindGameObjectWithTag("Pivot");
         ballRigidBody = GetComponent<Rigidbody2D>();
         ballRigidBody.isKinematic = true;
         ConnectRigidBody();
@@ -24,6 +29,9 @@ public class BallHandler : MonoBehaviour
     void Update()
     {
         if (ballRigidBody == null)
+            return;
+
+        if (Touchscreen.current == null)
             return;
 
         if (!Touchscreen.current.primaryTouch.press.isPressed)
@@ -45,7 +53,12 @@ public class BallHandler : MonoBehaviour
 
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-            ballRigidBody.position = worldPosition;
+            float distance = Vector2.Distance(pivot.transform.position, worldPosition);
+
+            if (distance < maxDistance)
+            {
+                ballRigidBody.position = worldPosition;
+            }
         }
     }
     
