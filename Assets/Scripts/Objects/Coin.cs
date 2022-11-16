@@ -9,6 +9,7 @@ public class Coin : Collectable
     {
         base.OnCollisionEnter2D(col);
         
-        getCoin?.Invoke();
+        if(col.gameObject.CompareTag("Ball"))
+            getCoin?.Invoke();
     }
 }

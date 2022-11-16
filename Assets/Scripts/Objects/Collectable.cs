@@ -27,8 +27,11 @@ public class Collectable : MonoBehaviour
     void CloseMeshRenderer()
     {
         var meshRenderer = GetComponent<SpriteRenderer>().enabled = false;
-
+        
         var rb = GetComponent<Rigidbody2D>();
         Destroy(rb);
+
+        var collider = GetComponent<CircleCollider2D>();
+        Destroy(collider);
     }
 }

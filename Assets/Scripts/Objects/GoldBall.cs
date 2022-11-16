@@ -8,6 +8,7 @@ public class GoldBall : Collectable
     {
         base.OnCollisionEnter2D(col);
         
-        gameWin?.Invoke();
+        if(col.gameObject.CompareTag("Ball"))
+            gameWin?.Invoke();
     }
 }

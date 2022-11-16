@@ -28,6 +28,8 @@ public class ButtonSessions : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
+    #region BuyButtons
+    
     public void ButtonBeforeBuy2()
     {
         clickedButton2?.Invoke();
@@ -51,5 +53,28 @@ public class ButtonSessions : MonoBehaviour
     public void ButtonAfterBuy3()
     {
         PlayerPrefs.SetInt("gameBall", 2);
+    }
+    
+    #endregion
+
+    public void TryAgainButton()
+    {
+        Invoke(nameof(LoadCurrentLevel), 0.5f);
+    }
+    
+    void LoadCurrentLevel()
+    {
+        var currentLevel = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentLevel);
+    }
+
+    public void MainMenuButton()
+    {
+        Invoke(nameof(GoMainMenu), 0.5f);
+    }
+
+    void GoMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
