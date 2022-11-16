@@ -10,7 +10,9 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioClip buttonClick;
     [SerializeField] AudioClip buyButtonClick;
     [SerializeField] AudioClip destroyCollectableSound;
-
+    [SerializeField] AudioClip mainTheme1;
+    [SerializeField] AudioClip hitBlock;
+    [SerializeField] AudioClip throwSound;
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -18,6 +20,24 @@ public class AudioController : MonoBehaviour
         WalletController.boughtButton2 += BuyButtonSound;
         WalletController.boughtButton3 += BuyButtonSound;
         Collectable.hitCollectable += CollectableSoundActivator;
+        BallHandler.hitBlock += HitBlockSoundActivator;
+        BallHandler.ballIsThrown += ThrowBallSoundActivator;
+        InvokeRepeating(nameof(MainThemeSong), 0.1f,19f);
+    }
+    
+    void ThrowBallSoundActivator()
+    {
+        _audioSource.PlayOneShot(throwSound);
+    }
+    
+    void HitBlockSoundActivator()
+    {
+        _audioSource.PlayOneShot(hitBlock);
+    }
+    
+    void MainThemeSong()
+    {
+        _audioSource.PlayOneShot(mainTheme1);
     }
 
     void CollectableSoundActivator()
@@ -46,5 +66,7 @@ public class AudioController : MonoBehaviour
         WalletController.boughtButton2 -= BuyButtonSound;
         WalletController.boughtButton3 -= BuyButtonSound;
         Collectable.hitCollectable -= CollectableSoundActivator;
+        BallHandler.hitBlock -= HitBlockSoundActivator;
+        BallHandler.ballIsThrown -= ThrowBallSoundActivator;
     }
 }

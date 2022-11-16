@@ -11,6 +11,7 @@ public class BallHandler : MonoBehaviour
     bool isDragging;
 
     public static Action ballIsThrown;
+    public static Action hitBlock;
 
     void Start()
     {
@@ -60,6 +61,7 @@ public class BallHandler : MonoBehaviour
         ballRigidBody.isKinematic = false;
         Invoke("RemoveJoint", 0.3f);
         Invoke("RemoveHandler", 1.5f);
+        ballIsThrown?.Invoke();
         
     }
     
@@ -75,7 +77,13 @@ public class BallHandler : MonoBehaviour
         var currentBallSprintJoint = GetComponent<SpringJoint2D>();
         currentBallSprintJoint.enabled = false;
         currentBallSprintJoint = null;
-        
-        ballIsThrown?.Invoke();
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Block"))
+        {
+            hitBlock?.Invoke();
+        }
     }
 }

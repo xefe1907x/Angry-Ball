@@ -8,10 +8,18 @@ public class HealthController : MonoBehaviour
     
     [SerializeField] List<GameObject> healths = new List<GameObject>();
 
+    bool winGame;
+
     int damageTakeCount = 0;
     void Start()
     {
         BallHandler.ballIsThrown += TakeDamage;
+        GoldBall.gameWin += IfPlayerWinsGame;
+    }
+
+    void IfPlayerWinsGame()
+    {
+        winGame = true;
     }
 
     void TakeDamage()
@@ -36,13 +44,14 @@ public class HealthController : MonoBehaviour
         
         if (damageTakeCount == 3)
         {
-            healthBecomeZero?.Invoke();
+            if (!winGame)
+                healthBecomeZero?.Invoke();
         }
-        
     }
 
     void OnDisable()
     {
         BallHandler.ballIsThrown -= TakeDamage;
+        GoldBall.gameWin -= IfPlayerWinsGame;
     }
 }

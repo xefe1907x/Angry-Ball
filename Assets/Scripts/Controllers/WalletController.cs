@@ -20,6 +20,7 @@ public class WalletController : MonoBehaviour
         ButtonSessions.clickedButton2 += CanBuyButton2;
         ButtonSessions.clickedButton3 += CanBuyButton3;
         Coin.getCoin += CollectCoin;
+        GoldBall.gameWin += SaveCollectedCoin;
     }
 
     void CollectCoin()
@@ -29,7 +30,8 @@ public class WalletController : MonoBehaviour
 
     void SaveCollectedCoin()
     {
-        //TODO: kaydet, topa carpıpo oyunu kazandığında playerprefse
+        playerMoney += collectedCoin;
+        PlayerPrefs.SetInt("playerMoney", playerMoney);
     }
 
     void CanBuyButton2()
@@ -66,7 +68,8 @@ public class WalletController : MonoBehaviour
     
     void WalletSetter()
     {
-        walletText.text = playerMoney.ToString();
+        if (walletText)
+            walletText.text = playerMoney.ToString();
     }
 
     void SaveMoneyToPlayerPrefs()
@@ -79,5 +82,6 @@ public class WalletController : MonoBehaviour
         ButtonSessions.clickedButton2 -= CanBuyButton2;
         ButtonSessions.clickedButton3 -= CanBuyButton3;
         Coin.getCoin -= CollectCoin;
+        GoldBall.gameWin -= SaveCollectedCoin;
     }
 }

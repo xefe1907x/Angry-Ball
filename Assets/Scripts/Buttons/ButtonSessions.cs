@@ -77,4 +77,16 @@ public class ButtonSessions : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void NextLevelButton()
+    {
+        Invoke(nameof(LoadNextLevel), 0.5f);
+    }
+
+    void LoadNextLevel()
+    {
+        var currentScene = SceneManager.GetActiveScene().buildIndex;
+        var nextScene = currentScene + 1;
+        SceneManager.LoadScene(nextScene);
+    }
 }

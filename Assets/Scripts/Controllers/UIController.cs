@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class UIController : MonoBehaviour
@@ -10,6 +11,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         HealthController.healthBecomeZero += LosePanelActivator;
+        GoldBall.gameWin += WinPanelActivator;
     }
 
     void LosePanelActivator()
@@ -19,11 +21,24 @@ public class UIController : MonoBehaviour
 
     void OpenLosePanel()
     {
-        losePanel.SetActive(true);
+        if (losePanel != null)
+            losePanel.SetActive(true);
+    }
+    
+    void WinPanelActivator()
+    {
+        losePanel = null;
+        Invoke(nameof(OpenWinPanel), delayOpenPanels);
+    }
+
+    void OpenWinPanel()
+    {
+        winPanel.SetActive(true);
     }
 
     void OnDisable()
     {
         HealthController.healthBecomeZero -= LosePanelActivator;
+        GoldBall.gameWin -= WinPanelActivator;
     }
 }

@@ -303,7 +303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
@@ -593,6 +593,18 @@ MonoBehaviour:
       - m_Target: {fileID: 659206742}
         m_TargetAssemblyTypeName: ButtonSessions, Assembly-CSharp
         m_MethodName: ButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 659206742}
+        m_TargetAssemblyTypeName: ButtonSessions, Assembly-CSharp
+        m_MethodName: NextLevelButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -903,7 +915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
@@ -1336,6 +1348,18 @@ MonoBehaviour:
       - m_Target: {fileID: 659206742}
         m_TargetAssemblyTypeName: ButtonSessions, Assembly-CSharp
         m_MethodName: ButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 659206742}
+        m_TargetAssemblyTypeName: ButtonSessions, Assembly-CSharp
+        m_MethodName: MainMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1879,7 +1903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
@@ -2665,6 +2689,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &653920222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653920223}
+  - component: {fileID: 653920224}
+  m_Layer: 0
+  m_Name: WalletController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653920223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653920222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1684659394}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653920224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653920222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee422f4bdfb5b8540ac3d26235ada60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &659206740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
@@ -2949,7 +3017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779500158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.626617, y: -5.64, z: 0}
+  m_LocalPosition: {x: 54.626617, y: -5.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3683,7 +3751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
@@ -3797,7 +3865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245107211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54.429382, y: -5.64, z: 0}
+  m_LocalPosition: {x: -54.429382, y: -5.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3951,7 +4019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571843012008648550, guid: 20b5c5ec2c897e6438593e775db67e08, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b5c5ec2c897e6438593e775db67e08, type: 3}
@@ -4593,7 +4661,10 @@ MonoBehaviour:
   _audioMixer: {fileID: 24100000, guid: 6aa87c7a0f857b74daf09ac56fb219ae, type: 2}
   buttonClick: {fileID: 8300000, guid: 88661881ce29bc447956b95e55ae83c0, type: 3}
   buyButtonClick: {fileID: 8300000, guid: 64a89cdbd56e52d4f9e6be59bb0a7bbd, type: 3}
-  destroyCollectableSound: {fileID: 8300000, guid: bfd83aea5d8d23145828ae094f020746, type: 3}
+  destroyCollectableSound: {fileID: 8300000, guid: b3ea349fca7442548b190b4099f17e3c, type: 3}
+  mainTheme1: {fileID: 8300000, guid: 746573aaccaa4254da90319ab2d829ca, type: 3}
+  hitBlock: {fileID: 8300000, guid: efb370c5c7a700345976b195b3666771, type: 3}
+  throwSound: {fileID: 8300000, guid: 56a9b71dc892f524d97f5018abe99683, type: 3}
 --- !u!82 &1673639644
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4801,6 +4872,7 @@ Transform:
   - {fileID: 356813491}
   - {fileID: 2016171170}
   - {fileID: 659206741}
+  - {fileID: 653920223}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5519,7 +5591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
@@ -6293,10 +6365,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallBlock
       objectReference: {fileID: 0}
-    - target: {fileID: 3306939100429294403, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd06e5bd5cf0df4f8c888680fec22b9, type: 3}
 --- !u!1001 &6790701604015073769
@@ -6414,10 +6482,6 @@ PrefabInstance:
     - target: {fileID: 5571843012008648550, guid: 20b5c5ec2c897e6438593e775db67e08, type: 3}
       propertyPath: m_Name
       value: LargeBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571843012008648550, guid: 20b5c5ec2c897e6438593e775db67e08, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b5c5ec2c897e6438593e775db67e08, type: 3}
