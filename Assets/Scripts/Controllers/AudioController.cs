@@ -9,6 +9,7 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] AudioClip buttonClick;
     [SerializeField] AudioClip buyButtonClick;
+    [SerializeField] AudioClip destroyCollectableSound;
 
     void Start()
     {
@@ -16,6 +17,12 @@ public class AudioController : MonoBehaviour
         ButtonSessions.buttonClicked += ButtonClickSound;
         WalletController.boughtButton2 += BuyButtonSound;
         WalletController.boughtButton3 += BuyButtonSound;
+        Collectable.hitCollectable += CollectableSoundActivator;
+    }
+
+    void CollectableSoundActivator()
+    {
+        _audioSource.PlayOneShot(destroyCollectableSound);
     }
 
     void BuyButtonSound()
@@ -38,5 +45,6 @@ public class AudioController : MonoBehaviour
         ButtonSessions.buttonClicked -= ButtonClickSound;
         WalletController.boughtButton2 -= BuyButtonSound;
         WalletController.boughtButton3 -= BuyButtonSound;
+        Collectable.hitCollectable -= CollectableSoundActivator;
     }
 }

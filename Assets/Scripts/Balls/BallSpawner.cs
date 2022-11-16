@@ -11,6 +11,7 @@ public class BallSpawner : MonoBehaviour
         SpawnBall();
         HealthController.healthBecomeZero += NoMoreSpawn;
         BallHandler.ballIsThrown += SpawnNewBall;
+        GoldBall.gameWin += NoMoreSpawn;
     }
 
     void SpawnNewBall()
@@ -34,5 +35,6 @@ public class BallSpawner : MonoBehaviour
     {
         HealthController.healthBecomeZero -= NoMoreSpawn;
         BallHandler.ballIsThrown -= SpawnNewBall;
+        GoldBall.gameWin -= NoMoreSpawn;
     }
 }

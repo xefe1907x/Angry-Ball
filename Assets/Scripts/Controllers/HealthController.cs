@@ -33,7 +33,8 @@ public class HealthController : MonoBehaviour
                 healths.Remove(healths[i]);
             }
         }
-        else
+        
+        if (damageTakeCount == 3)
         {
             healthBecomeZero?.Invoke();
         }
