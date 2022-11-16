@@ -7,6 +7,7 @@ public class WalletController : MonoBehaviour
     int playerMoney;
     int button2Price = 3;
     int button3Price = 5;
+    int collectedCoin = 0;
     TextMeshProUGUI walletText;
 
     public static Action boughtButton2;
@@ -18,6 +19,17 @@ public class WalletController : MonoBehaviour
         MoneyAmountController();
         ButtonSessions.clickedButton2 += CanBuyButton2;
         ButtonSessions.clickedButton3 += CanBuyButton3;
+        Coin.getCoin += CollectCoin;
+    }
+
+    void CollectCoin()
+    {
+        collectedCoin += 1;
+    }
+
+    void SaveCollectedCoin()
+    {
+        //TODO: kaydet, topa carpıpo oyunu kazandığında playerprefse
     }
 
     void CanBuyButton2()
@@ -66,5 +78,6 @@ public class WalletController : MonoBehaviour
     {
         ButtonSessions.clickedButton2 -= CanBuyButton2;
         ButtonSessions.clickedButton3 -= CanBuyButton3;
+        Coin.getCoin -= CollectCoin;
     }
 }
