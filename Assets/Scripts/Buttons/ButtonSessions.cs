@@ -29,11 +29,7 @@ public class ButtonSessions : MonoBehaviour
 
         SceneManager.LoadScene(level);
     }
-
-    void Update()
-    {
-        Debug.Log(PlayerPrefs.GetInt("gameLevel"));
-    }
+    
 
     #region BuyButtons
     
